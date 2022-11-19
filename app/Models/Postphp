@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Models;
+
+class Post
+{
+    static private $posts =  [
+        [
+            'title' => 'Judul Post Pertama',
+            'author' => 'Mirza Qamaruzzaman',
+            'slug' => 'judul-post-pertama',
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita, consequuntur culpa deleniti vero corrupti ducimus. Necessitatibus provident facilis ea in repellendus repudiandae reprehenderit! Voluptatibus, sapiente. Odio veritatis sequi maxime deserunt reiciendis dolorem dignissimos vel ducimus esse? Sunt voluptatem possimus quo reprehenderit est ratione corporis sit minima porro nihil illum animi deserunt molestiae ducimus reiciendis aliquam, harum obcaecati temporibus nostrum quis a. Voluptatem corporis ad accusamus omnis labore, magni natus ipsa placeat perferendis repellat reprehenderit molestias beatae odit exercitationem, unde asperiores.'
+        ],
+        [
+            'title' => 'Judul Post Kedua',
+            'author' => 'Zaazxz',
+            'slug' => 'judul-post-kedua',
+            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quasi non cupiditate nam odit perferendis magni ut repellat minus ipsum omnis accusantium aliquid aliquam unde eum nemo eos distinctio, totam asperiores placeat aperiam officia! Laudantium numquam sed dolorum quidem, amet odio animi blanditiis, consectetur sequi ratione, suscipit cupiditate ea officia ut modi. Ducimus recusandae odio non consectetur esse unde deleniti provident illo voluptatem repellendus, aspernatur eaque cum, officiis quod assumenda corrupti libero, quas aperiam dolores est? Repellat odit, voluptatibus aspernatur est iste repudiandae animi quo debitis, quisquam distinctio possimus cum consectetur incidunt nulla, perferendis labore atque! Excepturi laboriosam nam optio!'
+        ]
+    ];
+
+    public static function all() {
+        return collect(self::$posts);
+    }
+
+    public static function find($slug) {
+        $posts = static::all();
+        return $posts->firstWhere('slug', $slug);
+    }
+}
