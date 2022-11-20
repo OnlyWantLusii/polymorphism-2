@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,8 +39,15 @@ Route::get('/categories', [CategoryController::class, 'index']);
 // Route::get('/authors/{author:username}', [AuthorController::class, 'index']);
 
 // Login
-Route::get('/login', [LoginController::class,  'index']);
+Route::get('/login', [LoginController::class,  'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class,  'authenticate']);
+
+// Logout
+Route::post('/logout', [LoginController::class, 'logout']);
 
 // Register
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
+
+// Dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
