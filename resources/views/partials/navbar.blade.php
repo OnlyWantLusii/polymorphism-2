@@ -23,7 +23,8 @@
 
             <ul class="navbar-nav ms-auto">
                 @auth
-                {{-- <li class="nav-item dropdown">
+
+                    {{-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Welcome back, {{ auth()->user()->name }}!
                   </a>
@@ -34,11 +35,12 @@
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                   </ul>
                 </li> --}}
-                <a class="btn btn-danger me-1" href="/dashboard" role="button">Dashboard</a>
-                <form action="/logout" method="post">
-                  @csrf
-                  <button type="submit" class="btn btn-danger">Logout</button>
-                </form>
+                    <a class="btn btn-danger me-1" href="/dashboard" role="button">Dashboard</a>
+
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
                 @else
                     <li class="nav-item">
                         <a href="/login" class="nav-link {{ $active === 'login' ? 'active' : '' }}">
