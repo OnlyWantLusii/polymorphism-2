@@ -12,8 +12,7 @@
             alt="{{ $post->category->name }}">
             <article class="my-3">
                 {!! $post->body !!}     
-            </article>
-            <a href="/posts">Back to posts!</a>        
+            </article>      
         </div>
     </div>
 </div>
