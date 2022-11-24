@@ -7,7 +7,7 @@
                 <h1 class="mb-3">{{ $post->title }}</h1>
                 <a href="/dashboard/posts" class="btn btn-success"><span data-feather="arrow-left"></span>Back To All My
                     Posts</a>
-                <a href="/dashboard/posts//{{ $Post->slug }}/edit" class="btn btn-warning"><span data-feather="edit"></span>Edit</a>
+                <a href="/dashboard/posts//{{ $Post->slug }}/edit" class="btn btn-primary"><span data-feather="edit"></span>Edit</a>
 
                 {{-- Delete --}}
                 <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline"
